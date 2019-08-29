@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    
+    <style>
+    tr .btn{
+      width: 100%;
+      height: 100%;
+      padding: 0rem;
+    }
+    #row-top{
+        border-bottom: 1px solid;
+
+      }
+      #row-bottom{
+        border-top: 1px solid;
+      }
+      tr th:nth-child(even){
+        border-right: 1px solid;
+        border-left: 1px solid;
+      }
+      
+      .table1 {
+          width: 90%;
+          margin-bottom: 1rem;
+          margin-left: 5%;
+          margin-top: 5%;
+          margin-right: 5%;
+          color: #fff
+      }
+      tr{
+        min-height: 120px;
+      }
+      tr th{
+        height: 108px;
+        width: 30%;
+      }
+      .stone{
+          max-width: 100%;
+      }
+      button{
+        background-size: 100%;
+        background-size: 102px auto;
+      }
+      .btn-winner{
+        color: #fff;
+        background-color: #e6beae;
+        border-color: #e6beae;
+      }
+      .btn-suggest{
+        color: #fff;
+        background-color: #ffdd41;
+        border-color: #ffdd41;
+      }
+      .modal-dialog{
+     
+        margin: 170px auto;
+      }
+      .avatar{
+        width: 45px;
+        height: 45px;
+      }
+      .modal-body{
+        display: flex;
+        flex-direction: row;
+      }
+      .modal-body p{
+        margin: 10px;
+      }
+
+      .fontSun{
+        font-family: Sunline;
+        color:#fff
+      }
+      #whose_turn{
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+      }
+      #whose_turn p{
+          margin: 8px;
+      }
+      .shadow1{
+        -moz-box-shadow:    3px 3px 5px 6px #5ccfffbf;
+        -webkit-box-shadow: 3px 3px 5px 6px #5ccfffbf;
+        box-shadow:         0px 0px 15px 0px #5ccfffbf;
+        border-radius: 2.75rem;
+
+      }
+    </style>
+</head>
+
+<body><!--
+    <nav class="navbar navbar-light navbar-expand-md"> 
+        <div class="container-fluid">
+            <a class="navbar-brand" href="option.html"><img src="assets/img/back.png" style="width: 30px; height:30px;float: left;"></a><img src="assets/img/tic-tac-toe-logo.png" style="width: 50px;">       
+        </div>-->
+    </nav>
+    <div class="card text-center">
+        <div class="card-body text-center fontSun" id="whose_turn">
+          
+        </div>
+      </div>
+        <table class="table1 ">
+                <thead >
+                  <tr id="row-top">
+                    <th scope="col"><button type="button" class="btn btn-default" id="btn00" onclick="onclk('00',0,0)"></button></th>
+                    <th scope="col"><button type="button" class="btn btn-default" id="btn01" onclick="onclk('01',0,1)"></button></th>
+                    <th scope="col"><button type="button" class="btn btn-default" id="btn02" onclick="onclk('02',0,2)"></button></th>
+                  </tr>
+                 <tr>
+                    <th scope="col"><button type="button" class="btn btn-default" id="btn10" onclick="onclk('10',1,0)"></button></th>
+                      <th scope="col"><button type="button" class="btn btn-default" id="btn11" onclick="onclk('11',1,1)"></button></th>                     
+                      <th scope="col"><button type="button" class="btn btn-default" id="btn12" onclick="onclk('12',1,2)"></button></th>
+                    </tr>
+                    <tr id="row-bottom">
+                      <th scope="col"><button type="button" class="btn btn-default" id="btn20" onclick="onclk('20',2,0)"></button></th>
+                      <th scope="col"><button type="button" class="btn btn-default" id="btn21" onclick="onclk('21',2,1)"></button></th>
+                      <th scope="col"><button type="button" class="btn btn-default" id="btn22" onclick="onclk('22',2,2)"></button></th>
+                    </tr>
+                 </thead>
+              </table>
+              <button type="button" class="btn btn-danger width1" onclick="reset()">RESET</button>
+              <!-- Trigger the modal with a button -->
+
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Victory</h4>
+                  </div>
+                  <div class="modal-body" id="modalBody">
+                    
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="toOptions()">Exit</button>
+                      <button type="button" class="btn btn-success" data-dismiss="modal" onclick="playAgain()">Play Again</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <script src="./google-ads.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--- Inner file Scripting -->
+    <script src="./scripting/checkwin.js"></script>
+    <script src="scripting/reset.js"></script>
+    <script src="scripting/chesttoe.js"></script>
+    <script src="scripting/winning.js"></script>
+</body>
+
+</html>
